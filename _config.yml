@@ -5,8 +5,8 @@
 #
 title: Jumprope Design Blog
 email:
-description: A simple and awesome blog theme powered by jekyll.
-url: # the base hostname & protocol for your site
+description: A simple and awesome blog for Jumprope Design.
+url: http://blog.jumprope.design
 
 
 #
@@ -14,7 +14,7 @@ url: # the base hostname & protocol for your site
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Paris
+timezone:          Chicago
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -34,7 +34,7 @@ kramdown:
 #
 owner:
   name: Jumprope Design
-  avatar: me.png
+  avatar: me.jpg
   job: "Web Design, Web Development, Application Development and Branding."
   bio: "Jumprope design is a web design/development startup helping individuals and businesses design web experiences that capture the essence of their brand."
   email: "info@jumprope.design"
