@@ -12,7 +12,7 @@ Setting up Font Awesome with Laravel and Elixer (AKA Mix)
 
 ## 1) Pull in Font-Awesome through NPM
 {% highlight c# %}
-<h3 class="margin_top_2"><code>npm install font-awesome</code></h3>
+npm install font-awesome
 {% end highlight %}
 
 ## 2) Add css imports in your app.scss to import to your app.css file.
@@ -35,20 +35,9 @@ elixir((mix) => {
 mix.copy('node_modules/font-awesome/fonts/*.*', 'public/fonts/');
 {% endhighlight %}
 
-## 3.5) That's almost it. In my case I've had to update "_variables.scss" in the "node_modules/font-awesome/scss" directory.
+## 3.5) That's almost it. In my case I've had to update variables.scss in the node_modules/font-awesome/scss" directory.
 Change / make sure the line says:
 {% highlight javascript %}
 $fa-font-path: "../fonts" !default;
 {% endhighlight %}
 and make sure the other variable of the same name ($fa-font-path) a few lines below is commented out.
-<!--more-->
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
