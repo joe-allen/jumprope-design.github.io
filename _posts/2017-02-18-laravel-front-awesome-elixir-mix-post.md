@@ -12,21 +12,25 @@ comments: true
 Setting up Font Awesome with Laravel and Elixer (AKA Mix) `(In 3.5 easy steps)`
 
 ### 1) Pull in Font-Awesome through NPM
-
+`npm install font-awesome`
 
 ### 2) Add css imports in your app.scss to import to your app.css file.
-
+{% highlight css %}
+{% raw %}
+    @import "node_modules/font-awesome/scss/font-awesome.scss";
+{% endraw %}
+{% end highlight %}
 
 ### 3) Update your gulp.js file, copying the node_modules/font-awesome files to a fonts directory created in your public folder
 ### WITH LARAVEL ELIXIR:
 {% highlight javascript %}
-
+{% raw %}
     elixir((mix) => {
          mix.sass('app.scss')
             .webpack('app.js')
             .copy('node_modules/font-awesome/fonts/*.*', 'public/fonts/');
     });
-
+{% endraw %}
 {% end highlight %}
 
 ### WITH LARAVEL MIX:
