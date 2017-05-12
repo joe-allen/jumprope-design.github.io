@@ -4,7 +4,7 @@
 ####################################
 #
 title: Jumprope Design Blog
-email:
+email: info@jumprope.design
 description: A simple and awesome blog for Jumprope Design.
 url: http://blog.jumprope.design
 
@@ -35,12 +35,12 @@ kramdown:
 owner:
   name: Jumprope Design
   avatar: me.jpg
-  job: "Web Design, Web Development, Application Development and Branding."
-  bio: "Jumprope design is a web design/development startup helping individuals and businesses design web experiences that capture the essence of their brand."
+  job: "Web Application Design and Development."
+  bio: "Jumprope Design is a boutique web development company that designs and develops simple, modern websites and web applications."
   email: "info@jumprope.design"
   disqus-shortname:
   twitter: "@jumprope_design"
-  facebook: "@jumprope.design"
+  facebook: "jumprope.design"
   google:
     plus: #username
     analytics: UA-98880023-1
@@ -54,7 +54,7 @@ owner:
   linkedin: #username
   skype: #username
   xing: #username
-  instagram: "@jumprope.design"
+  instagram: jumprope.design
   lastfm: #username
   tumblr: #username
   pinterest: #username
