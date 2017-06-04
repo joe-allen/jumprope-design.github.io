@@ -4,7 +4,7 @@ title:  Laravel, Font Awesome and Elixir (Mix)!
 excerpt: "Setting up Font Awesome with Laravel and Elixer (AKA Mix)"
 date:   2017-02-18 15:07:19
 categories: [tutorial]
-tags: [code, highlighting]
+tags: [code, laravel, vue.js]
 comments: true
 ---
 
