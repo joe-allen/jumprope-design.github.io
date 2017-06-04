@@ -70,7 +70,7 @@ Having this ability to work offline and not push changes, wait, refresh in order
 
 
 #### REFERENCES
-Links to help you install / getting started
+Links to help you install / get started
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=NcIPANwBghU" target="_blank"><img src="http://img.youtube.com/vi/NcIPANwBghU/0.jpg" alt="gettingstarted.tv - Getting Started With Laravel Homestead" width="240" height="180" border="10" /></a>
 (GettingStarted.tv)
