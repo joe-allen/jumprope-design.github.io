@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard - El Rey Jesus</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Simple Side Bar CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Web Ration CSS -->
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <!-- Sweet Alert 2 -->
+    <link href="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper" class="toggled">
+        <div class="main_logo_container">
+            <img src="img/logo-icon.png" class="img-responsive main_logo_icon" id="logo">
+        </div>
+        <!-- sidebar-menu-wrapper -->
+        <div id="sidebar-wrapper" class="hide_scroll">
+            <ul class="nav sidebar-nav nav-stacked" id="accordion">
+                <!-- Toggle Menu Button -->
+                <li>
+                    <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars menu_icon" aria-hidden="true"></i><span class="font_white">NAVAGACÍON</span><i class="fa fa-angle-left custom font_white" aria-hidden="true"></i></a>
+                </li>
+                <!-- Toggle Menu Button -->
+
+                <!--  Menu Items - elementos de menú -->
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#firstLink" id="userProfile"><i class="fa fa-user-o primary_menu_icon" aria-hidden="true"></i><span class="font_white">Daniel Martin</span></a></li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#secondLink"><i class="fa fa-users primary_menu_icon" aria-hidden="true"></i>Membresa [Lider]<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="secondLink" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#exitLink" id="exit"><i class="fa fa-power-off primary_menu_icon" aria-hidden="true"></i>Exit</a></li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#contactosLink"><i class="fa fa-users primary_menu_icon" aria-hidden="true"></i>Contactos<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="contactosLink" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#3Link"><i class="fa fa-cogs primary_menu_icon" aria-hidden="true"></i>Discipulados<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="3Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link">Mis discípulos</a></li>
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link">Mentores y Discípulos</a></li>
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link">Renuniones de discípulos</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#4Link"><i class="fa fa-home primary_menu_icon" aria-hidden="true"></i>Casa De Paz<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="4Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#5Link" title="Categoría de lotes, lotes,, redes, cosechas"><i class="fa fa-map-marker primary_menu_icon" aria-hidden="true"></i>Categoría de lotes, lotes,, redes, cosechas<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="5Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#6Link" title="Escuelas, Escuelas,EscuelasEscuelas,Escuelas"><i class="fa fa-graduation-cap primary_menu_icon" aria-hidden="true"></i>Escuelas, Escuelas Escuelas<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="6Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, SubSubS...</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#7Link" title="ERJ-Definiciones, ERJ-Definiciones, ERJ-Definiciones"><i class="fa fa-book primary_menu_icon" aria-hidden="true"></i>ERJ-Definiciones, ERJ-Definiciones, ERJ-Definiciones<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="7Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#5Link"><i class="fa fa-map-marker primary_menu_icon" aria-hidden="true"></i>Lotes<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="5Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#6Link"><i class="fa fa-graduation-cap primary_menu_icon" aria-hidden="true"></i>Escuelas<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="6Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#7Link"><i class="fa fa-book primary_menu_icon" aria-hidden="true"></i>ERJ-Definiciones<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="7Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#5Link"><i class="fa fa-map-marker primary_menu_icon" aria-hidden="true"></i>Lotes<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="5Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#6Link"><i class="fa fa-graduation-cap primary_menu_icon" aria-hidden="true"></i>Escuelas<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="6Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+                <li class="panel_menu menu_link_item"><a class="main_menu_link" data-toggle="collapse" data-parent="#accordion" href="#7Link"><i class="fa fa-book primary_menu_icon" aria-hidden="true"></i>ERJ-Definiciones<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul id="7Link" class="collapse">
+                        <li class="sub_menu"><a href="#!" class="sub_menu_link" title="Sub Menu ExpSub Menu Exp, Sub Menu Exp">Sub Menu Exp, Sub Menu Exp</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar-menu-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+
+                 <!-- top bar (search area) -->
+                <div class="row" id="top_bar">
+                    <div class="col-xs-12 col-lg-4">
+                        <p class="font_white">My Dashboard</p>
+                    </div>
+                    <div class="col-xs-12 col-lg-4">
+                        <!-- Search Bar -->
+                        <form action="#" method="post">
+                            <div class="input-group full_width">
+                                <input type="text" class="form-control" aria-label="Search Field" placeholder="Busca...">
+                            </div>
+                        </form>
+                        <!-- End Search Bar -->
+                    </div>
+                    <div class="col-xs-12 col-lg-4 small_viewport_section">
+                        <!-- <p class="font_white">My Dashboard</p> -->
+                    </div>
+                </div>
+                <!-- end top bar (search area) -->
+
+                <!-- main area -->
+                <div class="row col-xs-12" id="main_body">
+
+                    <!-- User Data / Fab button -->
+                    <div class="fab_area">
+                        <div class="col-lg-4">
+                            <span>Dashboard</span><br>
+                            <span class="user_name">John Doe</span><br>
+                            <span class="user_id">4684548786</span>
+                        </div>
+                    </div>
+                    <!-- End User Data / Fab button -->
+
+                    <div class="col-xs-12">
+                        <!-- Table and Tabs -->
+                        <ul class="nav nav-tabs personal_info_section">
+                            <li class="active">
+                                <a data-toggle="tab" href="#evengelismo">Evangelism</a>
+                                <div class="progressCircleRed" style="position:absolute;top:-7px;left:2px;"><span class="indicator_number">4</span></div>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#afirmacion">Affirmation</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#cpaz">House of Peace</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#mentores">Discipleship</a>
+                            </li>
+                        </ul>
+                        <!-- EndTable and Tabs -->
+
+                        <!-- Tab Content -->
+                        <div id="dashboardCharts" class="tab-content">
+                            <div id="evengelismo" class="tab-pane fade in active">
+                                <div class="personal_info_section">
+                                    <div class="panel-body">
+                                        <div class="row dashboard_intro">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-6">
+                                                    <p class="dashboard_title">Evangelism: Current Status</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <!-- Show charts -->
+                                            <div class="col-xs-12" style="border-right: 1px solid #f2f2f2">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div id="hover_questions" v-cloak>
+                                                            <div class="col-xs-12 col-md-6">
+                                                                <span>
+                                                                    <!-- <p><strong>Current Totals + Targets <span class="progressCircleBlack"><span class="indicator_question">?</span></span></strong></p> -->
+                                                                    <p class="question_notification"><strong>Current Totals + Targets <span class="progressCircleBlack"><span @mouseover="show_question_current" @mouseleave="show_question_current" class="indicator_question">?</span></span></strong></p>
+                                                                    <div v-if="show_current_question" id="question_notification_container">
+                                                                        <p>- Current Totals</u>: Display current status by month</p>
+                                                                        <p>- Targets</u>: Display target goals by months</p>
+                                                                        <p>- Toggle totals by clicking the chart labels</p>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-xs-3 hidden-sm hidden-xs">
+                                                                <span class="text-left">
+                                                                    <p class="question_notification"><strong>Historical Comparisons <span class="progressCircleBlack"><span @mouseover="show_question_historical" @mouseleave="show_question_historical" class="indicator_question">?</span></span></strong></p>
+                                                                    <div v-if="show_histroical_question" id="question_notification_container">
+                                                                        <p>- Historical Totals</u>: Display historical status by month</p>
+                                                                        <p>- Targets:</u> Display target goals by months</p>
+                                                                        <p>- Use year buttons to toggle between years</p>
+                                                                        <p>- Toggle totals by clicking the chart labels</p>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-3 hidden-sm hidden-xs text-right">
+                                                            <span class="text-right">
+                                                                <!-- Chart Year Buttons -->
+                                                                <button class="graph_button_years" data-chart="dashChart1">1 Year</button>
+                                                                <button class="graph_button_years" data-chart="dashChart2">5 Year</button>
+                                                                <button class="graph_button_years" data-chart="dashChart3">10 Year</button>
+                                                                <!-- Chart Year Buttons -->
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <hr>
+                                                        <!-- Current (Main) Chart -->
+                                                        <canvas class="chart_1" id="dashChartCurrent"></canvas>
+                                                        <!-- End Current (Main) Chart -->
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <hr>
+                                                        <div class="col-xs-6 visible-xs-block visible-sm-block">
+                                                            <span class="text-left">
+                                                                <p class="question_notification_xs"><strong>Historical Totals + Targets <span class="progressCircleBlack"><span class="indicator_question">?</span></span></strong></p>
+                                                                <div id="question_notification_container" class="hide">
+                                                                    <p>- Historical Totals</u>: Display historical status by month</p>
+                                                                    <p>- Targets:</u> Display target goals by months</p>
+                                                                    <p>- Use year buttons to toggle between years</p>
+                                                                    <p>- Toggle totals by clicking the chart labels</p>
+                                                                </div>
+                                                            </span>
+                                                            <hr>
+                                                        </div>
+                                                        <div class="col-xs-6 visible-xs-block visible-sm-block text-right">
+                                                            <span class="text-right">
+                                                                <!-- Chart Year Buttons -->
+                                                                <button class="graph_button_years" data-chart="dashChart1">1 Year</button>
+                                                                <button class="graph_button_years" data-chart="dashChart2">5 Year</button>
+                                                                <button class="graph_button_years" data-chart="dashChart3">10 Year</button>
+                                                                <!-- Chart Year Buttons -->
+                                                            </span>
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <div class="chart_container">
+                                                            <canvas class="" id="dashChart1"></canvas>
+                                                            <canvas class="hide" id="dashChart2"></canvas>
+                                                            <canvas class="hide" id="dashChart3"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End show charts -->
+
+                                            <!-- Notifications containter -->
+                                            <div id="notifications" v-cloak>
+
+                                                <!-- Notification button -->
+                                                <div @click="notification_button" id="notification_button">
+                                                    <span class="right">
+                                                        <a class="notifications" id="toggle_notifications"><i class="fa fa-bell text-right" aria-hidden="true"></i> Alarms</a>
+                                                        <div class="progressCircleRed" style="position:absolute;top:-18px;right:12px;"><span class="indicator_number">4</span></div>
+                                                    </span>
+                                                </div>
+                                                <!-- End notification button -->
+
+                                                <!-- Show notifications -->
+                                                <transition name="fade">
+                                                    <div v-if="showAlarmContainer" id="notification_tray">
+                                                        <div class="notification_container">
+                                                            <i class="fa fa-bell text-right" aria-hidden="true"></i> <strong> Alarms</strong>
+                                                            <hr>
+                                                            <button @click="select_notification" class="notification_button"><div class="progressCircleRed" style="position:relative;top:2px;left:2px;"><span class="indicator_number">6 </span></div>Missing reports</button>
+                                                            <button @click="select_notification" class="notification_button"><div class="progressCircleGreen" style="position:relative;top:2px;left:2px;"><span class="indicator_number">3 </span></div>Without meetings</button>
+                                                            <button @click="select_notification" class="notification_button"><div class="progressCircleRed" style="position:relative;top:2px;left:2px;"><span class="indicator_number">2 </span></div>Missing deadlines</button>
+                                                            <button @click="select_notification" class="notification_button"><div class="progressCircleRed" style="position:relative;top:2px;left:2px;"><span class="indicator_number">3 </span></div>Without classes</button>
+                                                            <button @click="select_notification" class="notification_button"><div class="progressCircleYellow" style="position:relative;top:2px;left:2px;"><span class="indicator_number">9 </span></div>Reports in progress</button>
+                                                            <button @click="select_notification" class="notification_button"><div class="progressCircleGreen" style="position:relative;top:2px;left:2px;"><span class="indicator_number">2 </span></div>Reports completed</button>
+                                                        </div>
+                                                    </div>
+                                                </transition>
+                                                <!-- End show notifications -->
+
+                                                <!-- Show table of users -->
+                                                <transition name="fade">
+                                                    <div v-if="quickActionContainer" class="col-xs-12" id="user_table" style="border-right: 1px solid #f2f2f2">
+                                                        <hr>
+                                                        <div class="col-xs-6">
+                                                            <p class="dashboard_title">Quick Actions: <span>{{ quickActionText }}</span></p>
+                                                        </div>
+                                                        <div class="col-xs-6 text-right">
+                                                            <div v-if="showEmailForm" class="quick_actions_container" @click="close_email_form">
+                                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12">
+                                                            <div v-if="showUserTable" class="table-responsive">
+                                                                <table class="table table-bordered table-hover table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th colspan="5"><input @keyup="search_users" type="text" class="form-control" aria-label="Search Field" placeholder="Search Users..."></th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th class="text-center">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input @click="checkboxAll" v-model="checkedAll" id="checkbox1" type="checkbox">
+                                                                                    <label class="checkbox1" for="checkbox1"></label>
+                                                                                </div>
+                                                                            </th>
+                                                                            <th>Name</th>
+                                                                            <th>Email</th>
+                                                                            <th>Telephone</th>
+                                                                            <th>
+                                                                                <div class="text-right">
+                                                                                    <div class="btn-group custom">
+                                                                                        <div class="dropdown">
+                                                                                            <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                            </span>
+                                                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                                                <li @click="send_to_selected" id="email_1"><a href="#!">Send to selected</a></li>
+                                                                                                <li id="clear_1"><a href="#!">Clear all</a></li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="filterUsers">
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox2" value="checkbox2" type="checkbox">
+                                                                                    <label for="checkbox2"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">John Torres</td>
+                                                                            <td class="user_email_dash">John@gmail.com</td>
+                                                                            <td>973-234-4812</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_2" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox3" value="checkbox3" type="checkbox">
+                                                                                    <label for="checkbox3"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Daniela Navarro</td>
+                                                                            <td class="user_email_dash">Daniela@gmail.com</td>
+                                                                            <td>407-393-7629</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_3" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox4" value="checkbox4" type="checkbox">
+                                                                                    <label for="checkbox4"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Daniela Valeri</td>
+                                                                            <td class="user_email_dash">Daniela@gmail.com</td>
+                                                                            <td>115-841-64177906</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_4" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox5" value="checkbox5" type="checkbox">
+                                                                                    <label for="checkbox5"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Maria Adelina</td>
+                                                                            <td class="user_email_dash">Maria@gmail.com</td>
+                                                                            <td>786-738-3255</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_5" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox6" value="checkbox6" type="checkbox">
+                                                                                    <label for="checkbox6"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Maria Fernanda</td>
+                                                                            <td class="user_email_dash">Maria@gmail.com</td>
+                                                                            <td>854-764-76</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_6" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox7" value="checkbox7" type="checkbox">
+                                                                                    <label for="checkbox7"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Tayda Oshi</td>
+                                                                            <td class="user_email_dash">Tayda@gmail.com</td>
+                                                                            <td>770-899-9566</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_7" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox8" value="checkbox8" type="checkbox">
+                                                                                    <label for="checkbox8"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Sabrina Jean</td>
+                                                                            <td class="user_email_dash">Sabrina@gmail.com</td>
+                                                                            <td>786-630-9345</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_8" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox9" value="checkbox9" type="checkbox">
+                                                                                    <label for="checkbox9"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Gloria Yolanda</td>
+                                                                            <td class="user_email_dash">Gloria@gmail.com</td>
+                                                                            <td>786-316-8049</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_9" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox10" value="checkbox10" type="checkbox">
+                                                                                    <label for="checkbox10"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Cira Rodriguez</td>
+                                                                            <td class="user_email_dash">Cira@gmail.com</td>
+                                                                            <td>786-478-5680</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_1" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox11" value="checkbox11" type="checkbox">
+                                                                                    <label for="checkbox11"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Frankie Torres</td>
+                                                                            <td class="user_email_dash">Frankie@gmail.com</td>
+                                                                            <td>973-234-4812</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_1" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox12" value="checkbox12" type="checkbox">
+                                                                                    <label for="checkbox12"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Danny Navaro</td>
+                                                                            <td class="user_email_dash">Danny@gmail.com</td>
+                                                                            <td>407-393-7629</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_1" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox13" value="checkbox13" type="checkbox">
+                                                                                    <label for="checkbox13"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Danielle Vallor</td>
+                                                                            <td class="user_email_dash">Danielle@gmail.com</td>
+                                                                            <td>115-841-64177906</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_1" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox14" value="checkbox14" type="checkbox">
+                                                                                    <label for="checkbox14"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Mary Alden</td>
+                                                                            <td class="user_email_dash">Mary@gmail.com</td>
+                                                                            <td>786-738-3255</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_1" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="text-center user_checkbox">
+                                                                                <div class="checkbox checkbox-primary">
+                                                                                    <input :checked="isChecked" id="checkbox15" value="checkbox15" type="checkbox">
+                                                                                    <label for="checkbox15"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="user_name_dash">Cassy Fernandez</td>
+                                                                            <td class="user_email_dash">Cassy@gmail.com</td>
+                                                                            <td>854-764-76</td>
+                                                                            <td class="text-right">
+                                                                                <div class="btn-group custom">
+                                                                                    <div class="dropdown">
+                                                                                        <span class="btn dropdown-toggle dropdown_fab btn_table_extra" data-toggle="dropdown">
+                                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                        </span>
+                                                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                                                            <li @click="compose_message" id="sendEmail_1" class="send_email"><a href="#!">Compose Message</a></li>
+                                                                                            <li><a href="#!">Ignore User</a></li>
+                                                                                            <li><a href="#!">User Details</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="table-responsive no_border" v-if="showEmailForm">
+                                                                <form action="post">
+                                                                    <div class="col-xs-12 col-md-2" class="use_template">
+                                                                        <!-- <div>From Template:</div>
+                                                                        <div class="radio radio-primary radio-inline">
+                                                                            <input type="radio" id="inlineRadio1" v-model="use_template" v-bind:value="true" name="radioInline">
+                                                                            <label for="inlineRadio1"> Yes </label>
+                                                                        </div>
+                                                                        <div class="radio radio-primary radio-inline">
+                                                                            <input type="radio" id="inlineRadio2" v-model="use_template" v-bind:value="false" name="radioInline">
+                                                                            <label for="inlineRadio2"> No </label>
+                                                                        </div> -->
+
+                                                                        <span>From Template: {{ toggle_template_text }}</span>
+                                                                        <div @click="toggle_template_option" class="toggle_template_container">
+                                                                            <span class="toggle_control" :class="[toggle_template ? 'toggle_on' : 'toggle_off']"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <transition name="fade-dropdown">
+                                                                        <div class="col-xs-12 col-md-10" v-if="use_template">
+                                                                            <select class="form-control input_background" v-model="templateName">
+                                                                                <option style="background-color:#cacaca;" disabled value="">Choose template...</option>
+                                                                                <option style="background-color:#5a5a5a; color: #ffffff" value="create_template">Create new template</option>
+                                                                                <option v-for="emailtemplateName in emailTemplateNames" v-bind:value="emailtemplateName.name">
+                                                                                    {{ emailtemplateName.name }}
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </transition>
+                                                                    <div class="col-xs-12">
+                                                                        <hr>
+                                                                        <div class="input-group full_width">
+                                                                            <div>
+                                                                                <label class="left">To:</label>
+                                                                                <span class="right">
+                                                                                    <span @click="openUserContainer" class="show_add_user"><i :class="[showUserContainer ? 'fa fa-times' : 'fa fa-user-plus']" aria-hidden="true"></i></span>
+                                                                                </span>
+                                                                                <span class="right">
+                                                                                    <transition name="fade">
+                                                                                        <span v-if="showUserContainer" class="add_user_dropdown">
+                                                                                            <p v-for="(value, key) in userName" v-if="!value.send">
+                                                                                                {{ value.name }}
+                                                                                                <span class="right">
+                                                                                                    <span @click="addUser(key)" class="add_user">
+                                                                                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                                                                                    </span>
+                                                                                                </span>
+                                                                                            </p>
+                                                                                            <p v-if="addUserNoResults">
+                                                                                               No Results
+                                                                                            </p>
+                                                                                        </span>
+                                                                                    </transition>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="input-group full_width">
+                                                                            <div class="user_email_container" v-if="showEmailContainer">
+                                                                                <div class="add_user_container">
+                                                                                    <div v-for="(value, key) in userName" :key="key" v-if="value.send" class="chip_container">
+                                                                                        <span  class="user_email_chip">
+                                                                                            <input @keyup="addUser" class="search_add_users hide" type="text">{{ value.name }}
+                                                                                        </span>
+                                                                                        <span @click="removeUser(key)" class="close_chip"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <!-- Hidden input for emails -->
+                                                                                <!-- FIX FIX FIX THIS MAY HAVE TO MAKE A NEW EMAIL ARRAY. FIX FIX FIX -->
+                                                                                <input type="text" v-if="userName.send == true" v-model="userName" aria-label="Email Input Field">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="input-group full_width">
+                                                                            <label>Subject:</label>
+                                                                            <!-- <input v-if="use_template" type="text" v-model.trim="emailTemplateSubject" class="form-control" aria-label="Email Input Field"> -->
+                                                                            <input v-model.trim="userSubject" class="form-control input_dashboard" type="text" aria-label="Email Input Field">
+                                                                        </div>
+                                                                        <div class="input-group full_width">
+                                                                            <label>Message:</label>
+                                                                            <!-- <textarea v-if="use_template" rows="20" type="text" class="form-control" aria-label="Form Textarea" v-model="templateEmail"></textarea> -->
+                                                                            <textarea v-model="userMsg" rows="20" type="text" class="form-control textarea_dashboard" aria-label="Form Textarea"></textarea>
+                                                                        </div>
+                                                                        <hr>
+                                                                        <div class="input-group full_width">
+                                                                            <div class="text-left" v-if="templateSaved">Template saved.</div>
+                                                                            <div class="text-right">
+                                                                                <button @click.stop.prevent="createNewTemplate" :class="{disabled : toggleNewTemplate}" title="Create Email Template" class="btn btn-primary" name="create_email_template"><span class="fa fa-save"></span> Save Template</button>
+                                                                                <button @click.stop.prevent="send" :class="{disabled : toggleSend}" title="Send Email" class="btn btn-primary" id="email_1" name="email_1" type="submit" value="Aplicar"><span class="fa fa-envelope"></span> Send</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                    </div>
+                                                </transition>
+                                                <!-- End show table of users -->
+                                            </div>
+                                            <!-- End notifications containter -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Tab Content -->
+
+                    </div>
+                    <!-- end main area -->
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/collapse.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+    <script src="js/customChartJS.js"></script>
+
+    <!-- VueJS (Reactive JS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+    <script src="js/dashboard.js"></script>
+
+    <!-- sweetAlert2.js -->
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.js"></script>
+
+    <!-- Web Ration CSS -->
+    <script src="js/mini-menu.js"></script>
+    <script src="js/show-hide.js"></script>
+
+</body>
+
+</html>
