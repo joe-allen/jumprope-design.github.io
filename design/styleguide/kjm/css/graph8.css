@@ -1,0 +1,283 @@
+/* Globals */
+[v-cloak] { 
+     display:none; 
+}
+strong {
+     color: #5a5a5a;
+}
+.no_border {
+     border: none;
+}
+.dashboard_intro {
+     padding: 8px 0;
+}
+.dashboard_title {
+     font-size: 24px;
+}
+.textarea_dashboard {
+     border: none;
+     box-shadow: none;
+     border-radius: 1px;
+     background-color: #f5f5f5;
+}
+.input_dashboard {
+     border: none;
+     outline: none;
+     border-radius: 1px;
+     background: #f5f5f5;
+     border-top: none;
+     border-radius: 0;
+     box-shadow: none;
+}
+
+/* Charts */
+.chart_container {
+     position: relative;
+}
+.chart_container > canvas.hide {
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: none;
+}
+.btn-primary.disabled:hover {
+     cursor: not-allowed;
+     pointer-events: none;
+}
+
+/* Quick actions */
+.quick_actions_container > i {
+     margin-right: 8px;
+     color: #777777;
+     cursor: pointer;
+}
+.quick_actions_container > i.disabled {
+     color: #cccccc;
+     cursor: default;
+}
+
+/* Checkboxes */
+.checkbox > label.checkbox1::after {
+     top: -7px;
+}
+
+/* Chips */
+.user_email_container {
+     width: 100%;
+     padding: 4px;
+     border-radius: 4px;
+     background-color: #f5f5f5;
+}
+.chip_container {
+     border-radius: 1px;
+     display: inline-block;
+     background: #1976d2;
+     padding: 2px;
+     margin: 5px;
+}
+.chip_container:hover, .chip_container:hover > .user_email_chip {
+     background-color: #1065b9;
+}
+.user_email_chip {
+     padding: 1px 5px;
+     background-color: #1976d2;
+     color: #ffffff;
+}
+.close_chip {
+     padding: 0 1px 0 5px;
+     margin-right: 4px;
+     border-left: 1px solid #ffffff;
+     color: #ffffff;
+     cursor: pointer;
+}
+/* Indicators */
+.indicator_number {
+     color: #ffffff;
+     font-size: .75em;
+     padding-left: 4px;
+     margin-top: 1px;
+     position: absolute;
+}
+.indicator_question {
+     color: #ffffff;
+     font-size: .75em;
+     padding: 6px;
+     cursor: pointer;
+}
+button.notification_button > div >
+span.indicator_number {
+     color: #ffffff;
+     font-size: .75em;
+     margin-left: -7.5px;
+     margin-top: 0px;
+     position: absolute;
+}
+.progressCircleGreen {
+     width: 15px;
+     height: 15px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #6fbf73;
+     float: left;
+     margin-left: 3px;
+}
+.progressCircleYellow {
+     width: 15px;
+     height: 15px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #ffbf00;
+     float: left;
+     margin-left: 3px;
+}
+.progressCircleRed {
+     width: 15px;
+     height: 15px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #ff5722;
+     float: left;
+     margin-left: 3px;
+}
+.progressCircleBlack {
+     width: 15px;
+     height: 15px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #5a5a5a;
+     margin-left: 3px;
+}
+
+/* Buttons */
+.graph_button_years {
+	border: none;
+	border-bottom: 2px solid #bdbdbd;
+	border-radius: 2px;
+}
+.graph_button_years:focus {
+	border: none;
+	background-color: #bdbdbd;
+	border-bottom: 2px solid #bdbdbd;
+	outline: none;
+}
+.graph_button_years_focus {
+	border: none;
+	background-color: #bdbdbd;
+	border-bottom: 2px solid #bdbdbd;
+	outline: none;
+}
+.notification_button {
+     border: none;
+     border-bottom: 2px solid #bdbdbd;
+     border-radius: 2px;
+     width: 100%;
+     margin-bottom: 10px;
+     padding: 10px;
+}
+.notification_button:hover {
+     box-shadow: -1px 1px 4px rgba(100,100,100,.5)
+}
+.notification_button:focus {
+     border: none;
+     background-color: #bdbdbd;
+     border-bottom: 2px solid #bdbdbd;
+     outline: none;
+}
+.notification_button_focus {
+     border: none;
+     background-color: #bdbdbd;
+     border-bottom: 2px solid #bdbdbd;
+     outline: none;
+}
+
+/* Notifications */
+#notification_button {
+     position: absolute;
+     top: 70px;
+     right: 47px;
+}
+a.notifications {
+     color: #fff;
+     background-color: #1976d2;
+     border: 1px solid #1976d2;
+     border-top-left-radius: 0px;
+     border-top-right-radius: 0px;
+     padding: 10px;
+     border-radius: 4px;
+     cursor: pointer;
+}
+a.notifications:hover {
+     background-color: #1970c5;
+}
+#notification_tray {
+     width: 25%;
+     position: absolute;
+     background-color: #fff;
+     float: right;
+     right: 30px;
+     z-index: 10;
+     animation-name: display_tray;
+     animation-fill-mode: forwards;
+     animation-duration: 250ms;
+     opacity: 0;
+     /*height: 0;*/
+     /*-moz-transform: scaleY(-1);
+     -o-transform: scaleY(-1);
+     -webkit-transform: scaleY(-1);
+     transform: scaleY(-1);
+     filter: FlipV;
+     -ms-filter: "FlipV";*/
+}
+.notification_container {
+     padding: 30px;
+     border-radius: 4px;
+     box-shadow: -6px 5px 28px rgba(100,100,100,.5);
+}
+.question_notification {
+     cursor: pointer;
+     white-space: nowrap;
+}
+#question_notification_container {
+     padding: 30px;
+     width: 350px;
+     border-radius: 4px;
+     background-color: #5a5a5a;
+     position: absolute;
+     z-index: 1;
+     color: #ffffff;
+     opacity: .9;
+     box-shadow: -6px 5px 28px rgba(100,100,100,.5);
+}
+
+/* Animcation Rules */
+@keyframes display_tray {
+     0% { opacity: 0;  }
+     50% { opacity: .7; }
+     100% { opacity: 1; }
+}
+/* Viewports Rules */
+/* Viewports smaller than 1370px */
+@media(max-width:1370px) {
+}
+
+/* Viewports smaller than 1200px */
+@media(max-width:1200px) {
+     .graph_button_years {
+          font-size: .75em;
+     }
+}
+
+/* Viewports smaller than 991px */
+@media(max-width:991px) {
+     .graph_button_years {
+          font-size: .5em;
+     }
+}
+
+/* Viewports smaller than 767px */
+@media(max-width:767px) {
+}
