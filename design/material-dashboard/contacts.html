@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inox Hornos y Equipos</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div @click="hideMenu" :class="[menuOpen ? 'bg_overlay' : '']"></div>
+		<div @click="hideDropDown" :class="[dropDownOpen ? 'bg_overlay' : '']"></div>
+		<header class="header is-flex">
+			<div>
+				<div class="menu_container" @click="showMenu">
+					<i class="material-icons">menu</i>
+				</div>
+			</div>
+			<nav :class="[menuOpen ? '' : 'is-hidden']" class="is-flex is-menu">
+				<div class="is-logo-container">
+					<img class="is-logo" src="http://www.hornosecuador.com/sitio/wp-content/uploads/2014/09/logo2.png">
+				</div>
+				<div class="is-menu-item-container">
+					<ul>
+						<a href="index.html">
+							<li class="is-menu-item">
+								<span>Alarmas</span>
+								<span class="is-menu-item-tag">
+									<span class="tag is-danger">2</span> <span class="tag is-warning">3</span>
+								</span>
+							</li>
+						</a>
+						<a href="calendario.html"><li class="is-menu-item"><span>Calendario / Intervención</span></li></a>
+						<a href="contacts.html"><li class="is-menu-item"><span>Contactos</span><span class="tag is-warning">3</span></li></a>
+						<a href="clients.html"><li class="is-menu-item"><span>Clientes</span></li></a>
+						<a href="products.html"><li class="is-menu-item"><span>Productos</span></li></a>
+						<a href="jobs.html"><li class="is-menu-item"><span>Ordenes de trabajo</span></li></a>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- <div class="search">
+				<div class="field">
+					<p class="control">
+						<input class="input" type="text" placeholder="Busca">
+					</p>
+				</div>
+			</div> -->
+
+			<div class="page_name">
+				<span>Contactos</span>
+			</div>
+		</header>
+
+		<main class="main_container">
+			<div class="is-flex main_title_container">
+				<div class="main_title"><h1>Contactos</h1></div>
+				<!-- <div class="main_title"><h1>{{ showReport ? 'Reporte' : 'Alarmas' }}</h1></div> -->
+				<div class="main_filter_buttons_container">
+					<div class="block main_filter_buttons">
+						<div class="dd_container">
+							<a class="button" @click="toggleCityDropDown"><i class="material-icons">map</i> Cuidad</a>
+							<div class="dropdown" v-if="showCityDropDown">
+								<ul>
+									<li class="is-dd-item" @click="updateCityMainTitle">Cuenca</li>
+									<li class="is-dd-item" @click="updateCityMainTitle">Quito</li>
+									<li class="is-dd-item" @click="updateCityMainTitle">Riobamba</li>
+								</ul>
+							</div>
+						</div>
+						<div class="dd_container">
+							<a class="button" @click="toggleProductsDropDown"><i class="material-icons">shopping_cart</i> Productos</a>
+							<div class="dropdown" v-if="showProductsDropDown">
+								<ul>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G10</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G10*</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G5</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G16</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Harpia H10</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Harpia H16</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Harpia H20</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Peregrino P10</li>
+								</ul>
+							</div>
+						</div>
+						<a class="button is-dark"><i class="material-icons">alarm_on</i> Mas Urgente</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div v-if="showReport" class="report_container">
+				<div class="is-flex report_title_container">
+					<div class="main_title"><h2>Martin Hurtado</h2></div>
+					<div class="main_filter_buttons_container">
+						<div class="block main_filter_buttons">
+							<button class="button is-dark" @click="toggleReport"><i class="material-icons">close</i></button>
+						</div>
+					</div>
+				</div>
+				<strong>Cliente:</strong><p>Panesa</p>
+				<strong>Días antes del mantenimiento:</strong><p>20 dias (08-11-2017)</p>
+				<strong>Dirección:</strong><p>Avda. Edelberto Bonilla No.2 entre Bogotá y Santa Martha (Parque Industrial Riobamba)</p>
+				<div>
+					<strong>Teléfonos:</strong>
+
+					<p style="margin-bottom: 0;">099 556 3604 / 099 566 4480</p>
+					<p>(03) 237 8660 / (03) 237 8400</p>
+				</div>
+			</div>
+
+			<div v-if="showProduct" class="report_container">
+				<div class="is-flex report_title_container">
+					<div class="main_title"><h2>Detalles del producto</h2></div>
+					<div class="main_filter_buttons_container">
+						<div class="block main_filter_buttons">
+							<button class="button is-dark" @click="toggleProduct"><i class="material-icons">close</i></button>
+						</div>
+					</div>
+				</div>
+				<div class="is-flex report_title_container">
+					<div class="product_details">
+						<strong>Producto:</strong><p>Gavilan G10</p>
+						<strong>Días antes del mantenimiento:</strong><p>20 dias (08-11-2017)</p>
+						<strong>Dirección:</strong><p>Avda. Edelberto Bonilla No.2 entre Bogotá y Santa Martha (Parque Industrial Riobamba)</p>
+						<div>
+							<strong>Teléfonos:</strong>
+
+							<p style="margin-bottom: 0;">099 556 3604 / 099 566 4480</p>
+							<p>(03) 237 8660 / (03) 237 8400</p>
+						</div>
+					</div>
+					<div class="product_image">
+						<img src="http://www.hornosecuador.com/sitio/wp-content/uploads/2014/09/hpw1005g.png">
+					</div>
+				</div>
+			</div>
+
+			<div v-if="!showReport" class="table_container">
+				<table class="table">
+				  <thead>
+				    <tr @click="selectRow(event)">
+				      <th><abbr title="Position">ID</abbr></th>
+				      <th>Nombre</th>
+				      <th><abbr title="Drawn">Telefono</abbr></th>
+				      <th><abbr title="Lost">Correo</abbr></th>
+				      <th><abbr title="Won">Dias falta</abbr></th>
+				      <th><abbr title="Goals for">GF</abbr></th>
+				      <th><abbr title="Goal difference">Fecha de inicio</abbr></th>
+				      <th>Fecha de inicio</th>
+				      <th><abbr title="Points">Alarmas</abbr></th>
+				      <th>Acciones</th>
+				    </tr>
+				  </thead>
+				  <tfoot>
+				    <tr @click="selectRow(event)">
+				      <th><abbr title="Position">ID</abbr></th>
+  				      <th>Nombre</th>
+  				      <th><abbr title="Drawn">Telefono</abbr></th>
+  				      <th><abbr title="Lost">Correo</abbr></th>
+  				      <th><abbr title="Won">Dias falta</abbr></th>
+  				      <th><abbr title="Goals for">GF</abbr></th>
+  				      <th><abbr title="Goal difference">Fecha de inicio</abbr></th>
+  				      <th>Fecha de inicio</th>
+  				      <th><abbr title="Points">Alarmas</abbr></th>
+  				      <th>Acciones</th>
+				    </tr>
+				  </tfoot>
+				  <tbody>
+				    <tr @click="selectRow(event)">
+				      <th>1</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Martin Hurtado</a></td>
+				      </td>
+				      <td>099-568-1126</td>
+				      <td>correo@gmail.com3</td>
+				      <td>3</td>
+				      <td>68</td>
+				      <td>36</td>
+				      <td>+32</td>
+				      <td><span class="tag is-light">0</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>2</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Arsenal_F.C." title="Arsenal F.C.">Carla Gaos</a></td>
+				      <td>099-568-7544</td>
+				      <td>correo@gmail.com1</td>
+				      <td>7</td>
+				      <td>65</td>
+				      <td>36</td>
+				      <td>+29</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>3</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C." title="Tottenham Hotspur F.C.">Sergio Carballar</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com3</td>
+				      <td>6</td>
+				      <td>69</td>
+				      <td>35</td>
+				      <td>+34</td>
+				      <td><span class="tag is-warning">8</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>4</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Manchester_City_F.C." title="Manchester City F.C.">Ximena/Jimena Ros</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>10</td>
+				      <td>71</td>
+				      <td>41</td>
+				      <td>+30</td>
+				      <td><span class="tag is-light">0</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>5</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Manchester_United_F.C." title="Harpia H10 F.C.">Xavier Reyes</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>10</td>
+				      <td>49</td>
+				      <td>35</td>
+				      <td>+14</td>
+				      <td><span class="tag is-danger">5</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>6</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Harpia H16_F.C." title="Harpia H16 F.C.">Abigail Andrade</a></td>
+				      <td>099-456-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>11</td>
+				      <td>59</td>
+				      <td>41</td>
+				      <td>+18</td>
+				      <td><span class="tag is-success">2</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>7</th>
+				      <td><a href="https://en.wikipedia.org/wiki/West_Ham_United_F.C." title="Harpia H20 F.C.">Emiliano Maroto</a></td>
+				      <td>099-568-4576</td>
+				      <td>correo@gmail.com4</td>
+				      <td>8</td>
+				      <td>65</td>
+				      <td>51</td>
+				      <td>+14</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>8</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Peregrino P10_F.C." title="Peregrino P10 F.C.">Salomé Alvarado</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com2</td>
+				      <td>10</td>
+				      <td>63</td>
+				      <td>50</td>
+				      <td>+13</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>9</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Stoke_City_F.C." title="Gavilan G10 F.C.">Andrés Freixa</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>15</td>
+				      <td>41</td>
+				      <td>55</td>
+				      <td>−14</td>
+				      <td><span class="tag is-light">0</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>10</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Gavilan G10*_F.C." title="Gavilan G10* F.C.">Julieta Tassis</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com4</td>
+				      <td>12</td>
+				      <td>59</td>
+				      <td>53</td>
+				      <td>+6</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>11</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Gavilan G5_F.C." title="Gavilan G5 F.C.">Juan Moruga</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com4</td>
+				      <td>13</td>
+				      <td>59</td>
+				      <td>55</td>
+				      <td>+4</td>
+				      <td><span class="tag is-warning">8</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>12</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Swansea_City_A.F.C." title="Gavilan G16 A.F.C.">Ivanna Fonseca</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com1</td>
+				      <td>15</td>
+				      <td>42</td>
+				      <td>52</td>
+				      <td>−10</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>13</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Harpia H10_F.C." title="Harpia H10 F.C.">Ramón Tafalla</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>17</td>
+				      <td>40</td>
+				      <td>50</td>
+				      <td>−10</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>14</th>
+				      <td><a href="https://en.wikipedia.org/wiki/West_Bromwich_Albion_F.C." title="Harpia H16 F.C.">Rafaela Pinto</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com3</td>
+				      <td>15</td>
+				      <td>34</td>
+				      <td>48</td>
+				      <td>−14</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>15</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Crystal_Palace_F.C." title="Harpia H20 F.C.">Benito Berrocal</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>18</td>
+				      <td>39</td>
+				      <td>51</td>
+				      <td>−12</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>16</th>
+				      <td><a href="https://en.wikipedia.org/wiki/A.F.C._Bournemouth" title="A.F.C. Peregrino P10">Salomé Mancebo</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>18</td>
+				      <td>45</td>
+				      <td>67</td>
+				      <td>−22</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>17</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Gavilan G10_A.F.C." title="Gavilan G10 A.F.C.">Rafael Semprún</a></td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com2</td>
+				      <td>17</td>
+				      <td>48</td>
+				      <td>62</td>
+				      <td>−14</td>
+				      <td><span class="tag is-light">0</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>18</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Newcastle_United_F.C." title="Gavilan G10* F.C.">Clara Alcocer</a></td>
+				      </td>
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com0</td>
+				      <td>19</td>
+				      <td>44</td>
+				      <td>65</td>
+				      <td>−21</td>
+				      <td><span class="tag is-success">2</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>19</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Norwich_City_F.C." title="Gavilan G5 F.C.">Ismael Sainz</a></td>
+				      </td>
+				      <td>099-436-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td>22</td>
+				      <td>39</td>
+				      <td>67</td>
+				      <td>−28</td>
+				      <td><span class="tag is-warning">8</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    <tr @click="selectRow(event)">
+				      <th>20</th>
+				      <td><a href="https://en.wikipedia.org/wiki/Aston_Villa_F.C." title="Aston Villa F.C.">Eliana Freixa</a></td>
+				      </td>
+				      <td>099-568-3592</td>
+				      <td>correo@gmail.com</td>
+				      <td>27</td>
+				      <td>27</td>
+				      <td>76</td>
+				      <td>−49</td>
+				      <td><span class="tag is-light">7</span></td>
+				      <td><a class="button is-small" @click="toggleReport">DETALLES</a> <a class="button is-small">EDITAR</a> <a class="button is-small">ELEMINAR</a></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</main>
+
+		<footer>
+		</footer>
+	</div>
+<!-- <div id="app">
+  <p>Value: {{ message }}</p>
+  <input v-model="message">
+  <pre>{{ $data | json }}</pre>
+</div> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

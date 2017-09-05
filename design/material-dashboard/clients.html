@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inox Hornos y Equipos</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div @click="hideMenu" :class="[menuOpen ? 'bg_overlay' : '']"></div>
+		<div @click="hideDropDown" :class="[dropDownOpen ? 'bg_overlay' : '']"></div>
+		<header class="header is-flex">
+			<div>
+				<div class="menu_container" @click="showMenu">
+					<i class="material-icons">menu</i>
+				</div>
+			</div>
+			<nav :class="[menuOpen ? '' : 'is-hidden']" class="is-flex is-menu">
+				<div class="is-logo-container">
+					<img class="is-logo" src="http://www.hornosecuador.com/sitio/wp-content/uploads/2014/09/logo2.png">
+				</div>
+				<div class="is-menu-item-container">
+					<ul>
+						<a href="index.html">
+							<li class="is-menu-item">
+								<span>Alarmas</span>
+								<span class="is-menu-item-tag">
+									<span class="tag is-danger">2</span> <span class="tag is-warning">3</span>
+								</span>
+							</li>
+						</a>
+						<a href="calendario.html"><li class="is-menu-item"><span>Calendario / Intervención</span></li></a>
+						<a href="contacts.html"><li class="is-menu-item"><span>Contactos</span><span class="tag is-warning">3</span></li></a>
+						<a href="clients.html"><li class="is-menu-item"><span>Clientes</span></li></a>
+						<a href="products.html"><li class="is-menu-item"><span>Productos</span></li></a>
+						<a href="jobs.html"><li class="is-menu-item"><span>Ordenes de trabajo</span></li></a>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- <div class="search">
+				<div class="field">
+					<p class="control">
+						<input class="input" type="text" placeholder="Busca">
+					</p>
+				</div>
+			</div> -->
+
+			<div class="page_name">
+				<span>Clientes</span>
+			</div>
+		</header>
+
+		<main class="main_container">
+			<div class="is-flex main_title_container">
+				<div class="main_title"><h1>Clientes</h1></div>
+				<!-- <div class="main_title"><h1>{{ showReport ? 'Reporte' : 'Alarmas' }}</h1></div> -->
+				<div class="main_filter_buttons_container">
+					<div class="block main_filter_buttons">
+						<div class="dd_container">
+							<a class="button" @click="toggleCityDropDown"><i class="material-icons">map</i> Cuidad</a>
+							<div class="dropdown" v-if="showCityDropDown">
+								Azuay
+									<li class="is-dd-item" @click="updateCityMainTitle">Cuenca</li>
+									<li class="is-dd-item" @click="updateCityMainTitle">Chimborazo</li>
+									<li class="is-dd-item" @click="updateCityMainTitle">Riobamba</li>
+								</ul>
+							</div>
+						</div>
+						<div class="dd_container">
+							<a class="button" @click="toggleProductsDropDown"><i class="material-icons">shopping_cart</i> Productos</a>
+							<div class="dropdown" v-if="showProductsDropDown">
+								<ul>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G10</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G10*</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G5</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Gavilan G16</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Harpia H10</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Harpia H16</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Harpia H20</li>
+									<li class="is-dd-item" @click="updateProductMainTitle">Peregrino P10</li>
+								</ul>
+							</div>
+						</div>
+						<a class="button is-dark"><i class="material-icons">alarm_on</i> Mas Urgente</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div v-if="showReport" class="report_container">
+				<div class="is-flex report_title_container">
+					<div class="tabs is-centered is-boxed">
+						<ul>
+							<li class="is-active">
+								<a>
+									<span class="icon is-small"><i class="material-icons">perm_contact_calendar</i></span>
+									<span>Detalles</span>
+								</a>
+							</li>
+							<li>
+								<a>
+									<span class="icon is-small"><i class="material-icons">date_range</i></span>
+									<span>Calendario / Intervention</span>
+								</a>
+							</li>
+							<li>
+								<a>
+									<span class="icon is-small"><i class="material-icons">shopping_cart</i></span>
+									<span>Productos</span>
+								</a>
+							</li>
+							<li>
+								<a>
+									<span class="icon is-small"><i class="material-icons">assignment</i></span>
+									<span>Contracts</span>
+								</a>
+							</li>
+							<li>
+								<a>
+									<span class="icon is-small"><i class="material-icons">content_paste</i></span>
+									<span>Ordenes de trabajo</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="main_filter_buttons_container">
+						<div class="block main_filter_buttons">
+							<button class="button is-dark" @click="toggleReport"><i class="material-icons">close</i></button>
+						</div>
+					</div>
+				</div>
+				<div class="main_title"><h2>L' Epi</h2></div>
+
+				<div class="is-flex report_title_container">
+					<div class="product_details">
+						<strong>Días antes del mantenimiento:</strong><p>20 dias (08-11-2017)</p>Chimborazo</p>
+						<div>
+							<strong>Teléfonos:</strong>
+
+							<p style="margin-bottom: 0;">099 556 3604 / 099 566 4480</p>
+							<p>(03) 237 8660 / (03) 237 8400</p>
+						</div>
+					</div>
+					<div class="client_image">
+						<img src="http://lepi.com.ar/wp-content/uploads/header.png">
+					</div>
+				</div>
+
+			</div>
+
+			<div v-if="showProduct" class="report_container">
+				<div class="is-flex report_title_container">
+					<div class="main_title"><h2>Detalles del producto</h2></div>
+					<div class="main_filter_buttons_container">
+						<div class="block main_filter_buttons">
+							<button class="button is-dark" @click="toggleProduct"><i class="material-icons">close</i></button>
+						</div>
+					</div>
+				</div>
+				<div class="is-flex report_title_container">
+					<div class="product_details">
+						<strong>Producto:</strong><p>Gavilan G10</p>
+						<strong>Días antes del mantenimiento:</strong><p>20 dias (08-11-2017)</p>Chimborazo</p>
+						<div>
+							<strong>Teléfonos:</strong>
+
+							<p style="margin-bottom: 0;">099 556 3604 / 099 566 4480</p>
+							<p>(03) 237 8660 / (03) 237 8400</p>
+						</div>
+					</div>
+					<div class="product_image">
+						<img src="http://www.hornosecuador.com/sitio/wp-content/uploads/2014/09/hpw1005g.png">
+					</div>
+				</div>
+			</div>
+
+			<div v-if="!showReport" class="table_container">
+				<table class="table">
+				  <thead>
+				    <tr @click="selectRow(event)">
+				      <th><abbr title="Position">ID</abbr></th>
+				      <th><abbr title="Goals for">Nombre de contact</abbr></th>
+				      <th><abbr title="Goals for">Nombre de cliente</abbr></th>
+				      <th><abbr title="Goals for">Provincia</abbr></th>
+				      <th><abbr title="Goals for">Cuidad</abbr></th>
+				      <th><abbr title="Drawn">Telefono</abbr></th>
+				      <th><abbr title="Lost">Correo</abbr></th>
+				      <th>Acciones</th>
+				    </tr>
+				  </thead>
+				  <tfoot>
+				    <tr @click="selectRow(event)">
+				      <th><abbr title="Position">ID</abbr></th>
+				      <th><abbr title="Goals for">Nombre de contact</abbr></th>
+				      <th><abbr title="Goals for">Nombre de cliente</abbr></th>
+				      <th><abbr title="Goals for">Provincia</abbr></th>
+				      <th><abbr title="Goals for">Cuidad</abbr></th>
+				      <th><abbr title="Drawn">Telefono</abbr></th>
+				      <th><abbr title="Lost">Correo</abbr></th>
+				      <th>Acciones</th>
+				    </tr>
+				  </tfoot>
+				  <tbody>
+				    <tr @click="selectRow(event)">
+				      <th>1</th>
+				      <td>Martin Hurtado</td>
+				      <td>La panadería de Franck Dauffoui</td>
+
+				      <td>Guayas</td>
+				      <td>Guayaquil</td>
+
+				      <td>099-568-1126</td>
+				      <td>correo@gmail.com3</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>2</th>
+				      <td>Carla Gaos</td>
+				      <td>Bardepa</td>
+
+				      <td>Azuay</td>
+				      <td>Cuenca</td>
+
+				      <td>099-568-7544</td>
+				      <td>correo@gmail.com1</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>3</th>
+				      <td>Sergio Carballar</td>
+				      <td>L' Ep</td>
+
+				      <td>Loja</td>
+				      <td>Loja</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com3</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>4</th>
+				      <td>Ximena/Jimena Ros</td>
+				      <td>La panadería de Pabl</td>
+
+				      <td>Guayas</td>
+				      <td>Guayaquil</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>5</th>
+				      <td>Xavier Reyes</td>
+				      <td>Oui Ou</td>
+
+				      <td>Azuay</td>
+				      <td>Cuenca</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>6</th>
+				      <td>Abigail Andrade</td>
+				      <td>Guardá la lista</td>
+
+				      <td>Loja</td>
+				      <td>Loja</td>
+
+				      <td>099-456-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>7</th>
+				      <td>Emiliano Maroto</td>
+				      <td>La panadería de Franck Dauffoui</td>
+
+				      <td>Chimborazo</td>
+				      <td>Riobamba</td>
+
+				      <td>099-568-4576</td>
+				      <td>correo@gmail.com4</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>8</th>
+				      <td>Salomé Alvarado</td>
+				      <td>Bardepa</td>
+
+				      <td>Chimborazo</td>
+				      <td>Quito</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com2</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>9</th>
+				      <td>Andrés Freixa</td>
+				      <td>L' Ep</td>
+
+				      <td>Guayas</td>
+				      <td>Guayaquil</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>10</th>
+				      <td>Julieta Tassis</td>
+				      <td>La panadería de Pabl</td>
+
+				      <td>Azuay</td>
+				      <td>Cuenca</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com4</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>11</th>
+				      <td>Juan Moruga</td>
+				      <td>Oui Ou</td>
+
+				      <td>Azuay</td>
+				      <td>Cuenca</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com4</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>12</th>
+				      <td>Ivanna Fonseca</td>
+				      <td>Guardá la lista</td>
+
+				      <td>Guayas</td>
+				      <td>Guayaquil</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com1</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>13</th>
+				      <td>Ramón Tafalla</td>
+				      <td>La panadería de Franck Dauffoui</td>
+
+				      <td>Chimborazo</td>
+				      <td>Riobamba</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>14</th>
+				      <td>Rafaela Pinto</td>
+				      <td>Bardepa</td>
+
+				      <td>099-568-7592</td>
+				      <td>Quito</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com3</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>15</th>
+				      <td>Benito Berrocal</td>
+				      <td>L' Ep</td>
+
+				      <td>Guayas</td>
+				      <td>Guayaquil</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>16</th>
+				      <td>Salomé Mancebo</td>
+				      <td>La panadería de Pabl</td>
+
+				      <td>Guayas</td>
+				      <td>Guayaquil</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>17</th>
+				      <td>Rafael Semprún</td>
+				      <td>Oui Ou</td>
+
+				      <td>Azuay</td>
+				      <td>Cuenca</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com2</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>18</th>
+				      <td>Clara Alcocer</td>
+				      <td>Guardá la lista</td>
+
+				      <td>Loja</td>
+				      <td>Loja</td>
+
+				      <td>099-568-7592</td>
+				      <td>correo@gmail.com0</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				    <tr @click="selectRow(event)">
+				      <th>19</th>
+				      <td>Ismael Sainz</td>
+				      <td>Bardepa</td>
+
+				      <td>Azuay</td>
+				      <td>Cuenca</td>
+
+				      <td>099-436-7592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    <tr @click="selectRow(event)">
+				      <th>20</th>
+				      <td>Eliana Freixa</td>
+				      <td>L' Ep</td>
+
+				      <td>Loja</td>
+				      <td>Loja</td>
+
+				      <td>099-568-3592</td>
+				      <td>correo@gmail.com</td>
+				      <td><a class="button is-small" @click="toggleReport">VER DETALLES</a></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</main>
+
+		<footer>
+		</footer>
+	</div>
+<!-- <div id="app">
+  <p>Value: {{ message }}</p>
+  <input v-model="message">
+  <pre>{{ $data | json }}</pre>
+</div> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
